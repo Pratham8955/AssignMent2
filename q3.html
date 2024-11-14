@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Div Visibility</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Styling the body */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff7f50 0%, #ff6347 100%); /* A vibrant coral gradient */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+    
+        /* Button styling */
+        #toggleButton {
+            background-color: #4caf50; /* Green button */
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+    
+        #toggleButton:hover {
+            background-color: #45a049; /* Darker green on hover */
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Div styling */
+        #myDiv {
+            margin-top: 20px;
+            padding: 25px;
+            width: 340px;
+            background-color: #ffffff; /* White background for the div */
+            color: #333333; /* Dark text for better readability */
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            display: none;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+    
+        /* Animation for when div is shown */
+        #myDiv.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div>
+        <button id="toggleButton">Toggle Div</button>
+        <div id="myDiv">
+            <p>This is the div content.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#toggleButton").click(function() {
+                $("#myDiv").toggleClass("show"); // Add/Remove 'show' class to apply animations
+            });
+        });
+    </script>
+</body>
+</html>

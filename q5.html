@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f7fa; /* Light blue background for a fresh feel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+        /* Form Container Styling */
+        #myForm {
+            background-color: #ffffff; /* White background for the form */
+            padding: 40px;
+            border-radius: 15px; /* Soft rounded corners */
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Softer, more prominent shadow for depth */
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            transition: all 0.3s ease; /* Smooth transition effect */
+        }
+    
+        #myForm:hover {
+            transform: scale(1.02); /* Slight zoom-in effect when hovered */
+        }
+    
+        /* Form Heading Styling */
+        h1 {
+            color: #2c3e50; /* Darker blue for a professional and clean heading */
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+        }
+    
+        /* Input Field Styling */
+        input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd; /* Soft border */
+            margin-bottom: 20px;
+            background-color: #f9f9f9; /* Light grey background for inputs */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #2980b9; /* Blue focus border */
+            box-shadow: 0 0 8px rgba(41, 128, 185, 0.3); /* Blue glow effect */
+        }
+    
+        /* Error Message Styling */
+        .error-message {
+            color: #e74c3c; /* Bright red for error messages */
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+    
+        /* Button Styling */
+        button {
+            background-color: #2980b9; /* Vibrant blue */
+            color: #fff;
+            padding: 14px 22px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for button */
+        }
+    
+        button:hover {
+            background-color: #3498db; /* Lighter blue on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+    
+        button:active {
+            background-color: #2980b9; /* Slightly darker blue when clicked */
+            transform: translateY(0); /* Reset button position */
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            #myForm {
+                width: 90%;
+                padding: 25px;
+            }
+    
+            h1 {
+                font-size: 24px; /* Slightly smaller font size on mobile */
+            }
+    
+            input[type="text"] {
+                padding: 12px;
+            }
+    
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <form id="myForm">
+        <h1>Simple Form Validation</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <span class="error-message" id="nameError"></span>
+        <br>
+
+        <button type="submit" id="submit"><i class="fas fa-paper-plane"></i> Submit</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#myForm").submit(function(event) {
+                // Prevent the form from submitting
+                event.preventDefault();
+
+                // Get the value of the name input field
+                const nameValue = $("#name").val();
+
+                // Check if the name field is empty
+                if (nameValue.trim() === "") {
+                    // Display an error message
+                    $("#nameError").text("Name cannot be empty");
+                } else {
+                    // Clear any previous error message
+                    $("#nameError").text("");
+
+                    // Submit the form (or perform other actions)
+                    alert("Form submitted successfully!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
