@@ -58,9 +58,7 @@
                 success : function(response){                
                     console.log(response);
 
-                    // $("#result").removeClass("d-none");
-                    // $("#cityHeader").html(response.location.name + " / " + response.location.localtime);
-                    $("#weather").html(`
+                     $("#weather").html(`
                         <span class="round">
                             <img src='https:${response.current.condition.icon}' alt="" class="img rounded-circle">
                             <br>

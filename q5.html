@@ -6,10 +6,10 @@
     <title>Simple Form Validation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Styling */
+       
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f2f7fa; /* Light blue background for a fresh feel */
+            background-color: #f2f7fa;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,52 +17,52 @@
             margin: 0;
         }
     
-        /* Form Container Styling */
+        
         #myForm {
-            background-color: #ffffff; /* White background for the form */
+            background-color: #ffffff; 
             padding: 40px;
-            border-radius: 15px; /* Soft rounded corners */
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Softer, more prominent shadow for depth */
+            border-radius: 15px; 
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); 
             width: 100%;
             max-width: 450px;
             text-align: center;
-            transition: all 0.3s ease; /* Smooth transition effect */
+            transition: all 0.3s ease; 
         }
     
         #myForm:hover {
-            transform: scale(1.02); /* Slight zoom-in effect when hovered */
+            transform: scale(1.02); 
         }
     
-        /* Form Heading Styling */
+        
         h1 {
-            color: #2c3e50; /* Darker blue for a professional and clean heading */
+            color: #2c3e50; 
             font-size: 28px;
             margin-bottom: 25px;
             font-family: 'Segoe UI', sans-serif;
             font-weight: 600;
         }
     
-        /* Input Field Styling */
+        
         input[type="text"] {
             width: 100%;
             padding: 14px;
             font-size: 16px;
             border-radius: 8px;
-            border: 1px solid #ddd; /* Soft border */
+            border: 1px solid #ddd; 
             margin-bottom: 20px;
-            background-color: #f9f9f9; /* Light grey background for inputs */
+            background-color: #f9f9f9; 
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
     
         input[type="text"]:focus {
             outline: none;
-            border-color: #2980b9; /* Blue focus border */
-            box-shadow: 0 0 8px rgba(41, 128, 185, 0.3); /* Blue glow effect */
+            border-color: #2980b9; 
+            box-shadow: 0 0 8px rgba(41, 128, 185, 0.3); 
         }
     
-        /* Error Message Styling */
+       
         .error-message {
-            color: #e74c3c; /* Bright red for error messages */
+            color: #e74c3c; 
             font-size: 14px;
             font-weight: bold;
             margin-top: -10px;
@@ -70,9 +70,8 @@
             display: block;
         }
     
-        /* Button Styling */
         button {
-            background-color: #2980b9; /* Vibrant blue */
+            background-color: #2980b9; 
             color: #fff;
             padding: 14px 22px;
             font-size: 16px;
@@ -81,20 +80,20 @@
             cursor: pointer;
             width: 100%;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for button */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); 
         }
     
         button:hover {
-            background-color: #3498db; /* Lighter blue on hover */
-            transform: translateY(-2px); /* Subtle lift effect */
+            background-color: #3498db; 
+            transform: translateY(-2px);
         }
     
         button:active {
-            background-color: #2980b9; /* Slightly darker blue when clicked */
-            transform: translateY(0); /* Reset button position */
+            background-color: #2980b9; 
+            transform: translateY(0); 
         }
     
-        /* Responsive Design */
+        
         @media (max-width: 500px) {
             #myForm {
                 width: 90%;
@@ -102,7 +101,7 @@
             }
     
             h1 {
-                font-size: 24px; /* Slightly smaller font size on mobile */
+                font-size: 24px; 
             }
     
             input[type="text"] {
@@ -132,21 +131,12 @@
     <script>
         $(document).ready(function() {
             $("#myForm").submit(function(event) {
-                // Prevent the form from submitting
                 event.preventDefault();
-
-                // Get the value of the name input field
                 const nameValue = $("#name").val();
-
-                // Check if the name field is empty
-                if (nameValue.trim() === "") {
-                    // Display an error message
+                if (nameValue.trim() === "") {    
                     $("#nameError").text("Name cannot be empty");
                 } else {
-                    // Clear any previous error message
                     $("#nameError").text("");
-
-                    // Submit the form (or perform other actions)
                     alert("Form submitted successfully!");
                 }
             });

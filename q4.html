@@ -7,7 +7,7 @@
     <title>Image Slider</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* styles.css */
+       
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -94,22 +94,21 @@
             var slides = $('.slider img');
             var totalSlides = slides.length;
 
-            // Show the initial image
+            
             showSlide(currentIndex);
 
-            // Handle "Next" button click
             $('#nextBtn').click(function () {
                 currentIndex = (currentIndex + 1) % totalSlides;
                 showSlide(currentIndex);
             });
 
-            // Handle "Previous" button click
+            
             $('#prevBtn').click(function () {
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 showSlide(currentIndex);
             });
 
-            // Function to show the current slide
+            
             function showSlide(index) {
                 slides.hide();
                 slides.eq(index).show();

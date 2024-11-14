@@ -6,7 +6,7 @@
     <title>Real-Time Chat App</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-/* styles.css */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -109,7 +109,7 @@ body {
   outline: none;
   font-size: 14px;
   transition: border 0.3s;
-  transform: skewX(-5deg); /* Tilt the input slightly */
+  transform: skewX(-5deg); 
 }
 
 #message-input:focus {
@@ -145,13 +145,13 @@ button:hover {
         </form>
     </div>
     <script>
-     // script.js
+     
 $(document).ready(function () {
-    const messages = []; // In-memory storage for messages
+    const messages = []; 
     const $chatDisplay = $('#chat-display');
-    // Function to render messages
+   
     function renderMessages() {
-        $chatDisplay.empty(); // Clear previous messages
+        $chatDisplay.empty(); 
         messages.forEach((message) => {
             const wrapperClass = message.sender === 'user' ? 'message-wrapper sent-wrapper' : 'message-wrapper received-wrapper';
             const messageClass = message.sender === 'user' ? 'sent' : 'received';
@@ -164,21 +164,20 @@ $(document).ready(function () {
         });
         $chatDisplay.scrollTop($chatDisplay.prop("scrollHeight"));
     }
-    // Handle form submission
+   
     $('#chat-form').on('submit', function (event) {
         event.preventDefault();        
         const messageText = $('#message-input').val().trim();
-        if (messageText === '') return; // Prevent empty messages
-        // Add user message to messages array
+        if (messageText === '') return; 
+        
         messages.push({ sender: 'user', text: messageText });
-        renderMessages(); // Update the chat display
-        $('#message-input').val(''); // Clear input
-        // Simulate a response
+        renderMessages(); 
+        $('#message-input').val(''); 
         setTimeout(function () {
-            const botReply = "Echo: " + messageText; // Bot response (echo)
+            const botReply = "Echo: " + messageText; 
             messages.push({ sender: 'bot', text: botReply });
-            renderMessages(); // Update the chat display with bot reply
-        }, 500); // Delay to mimic real-time response
+            renderMessages(); 
+        }, 500); 
     });
 });
     </script>
